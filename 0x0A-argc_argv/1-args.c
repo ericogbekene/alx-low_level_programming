@@ -11,9 +11,9 @@
 
 int main(int argc, char **argv)
 {
+	(void)argv;
+	printf("%d\n", argc-1);
 
-		printf("The number of arguments is :%d\n", argc);
-		printf("program name is: %s\n", argv[0]);
 
 	return (0);
 }
