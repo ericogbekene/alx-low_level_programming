@@ -8,7 +8,7 @@
  * @grid: array size
  * @height: rows of array
  *
- * Return: void
+ * Return: Always (0) Success
  */
 
 void free_grid(int **grid, int height)
@@ -20,4 +20,5 @@ void free_grid(int **grid, int height)
 		free(grid[i]);
 	}
 	free(grid);
+	return (0);
 }
