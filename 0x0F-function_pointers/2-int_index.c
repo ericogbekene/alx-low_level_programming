@@ -3,23 +3,31 @@
 #include "function_pointers.h"
 
 /**
- * int_index : checks for an int
+ * int_index - checks for an int in an array
  * @array: the array
  * @size: size of the array
  * @cmp: pointer to compare
+ *
+ * Return: first index without int
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	unsigned int i;
-	int count;
+	int i;
 
+
+	if (size <= 0 || array == NULL || cmp == NULL)
+	{
+		return (-1);
+	}
 	for (i = 0; i <= size; i++)
 	{
 		cmp(array[i]);
-		if (array[i])
+
+		if (cmp(array[i]) != 0)
 		{
-			count+= 1;
+			return (i);
 		}
 	}
+	return (-1);
 }
