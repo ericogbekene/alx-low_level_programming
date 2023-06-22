@@ -13,7 +13,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	int i = 0;
+	int i;
 
 	if (name == NULL || f == NULL)
 	{
@@ -21,6 +21,6 @@ void print_name(char *name, void (*f)(char *))
 	}
 	for (i = 0; name[i] != '\0'; i++)
 	{
-		f(name);
+		f(&name[i]);
 	}
 }
