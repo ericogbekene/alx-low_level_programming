@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	
+
 	result = my_ptr(num1, num2);
 	printf("%d\n", result);
 	return (0);
