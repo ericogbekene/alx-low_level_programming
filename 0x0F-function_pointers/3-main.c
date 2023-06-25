@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2;
-	char *op;
+	char op;
 	int (*my_ptr)(int, int);
 	int result;
 
@@ -22,25 +22,24 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	op = argv[2];
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	(*my_ptr)(int, int) = get_op_func(op);
+	my_ptr = get_op_func(argv[2]);
 	if (my_ptr == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if (((*op == '/') || (*op == '%')) && num2 == 0)
+	op = *argv[2];
+	if (((op == '/') || (op == '%')) && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	else
 	
-		result = my_ptr(num1, num2);
-		printf("%d\n", result);
+	result = my_ptr(num1, num2);
+	printf("%d\n", result);
 	return (0);
 
 }
