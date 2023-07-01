@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /*
  * *_memset: puts a number of bytes in an allocated memory area
@@ -32,16 +33,18 @@ char *_memset(char *s, char b, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
+	unsigned int arraySize;
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
 
-	ptr = malloc(size * nmemb);
+	arraySize = nmemb * size;
+
+	ptr = malloc(arraySize);
 
 	if (ptr == (NULL))
 		return (NULL);
-
-
+	memset(ptr, 0, arraySize);
 
 	return (ptr);
 }
