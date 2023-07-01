@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * *_memset: puts a number of bytes in an allocated memory area
+/**
+ * _memset - puts n bytes in an allocated memory area
  * @s: memory location to fill
  * @b: character to fill memory location with
  * @n: number of times to insert b
@@ -44,7 +44,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ptr == (NULL))
 		return (NULL);
-	memset(ptr, 0, arraySize);
+	_memset(ptr, 0, arraySize);
 
 	return (ptr);
 }
