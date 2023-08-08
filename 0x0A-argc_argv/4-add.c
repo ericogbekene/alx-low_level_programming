@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	for (i = 0; i < y; i++)
+	for (i = 0; i < argc; i++)
 		sum += x;
 
 	printf("%d\n", sum);
