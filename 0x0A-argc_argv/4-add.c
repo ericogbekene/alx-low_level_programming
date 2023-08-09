@@ -18,17 +18,17 @@ int main(int argc, char **argv)
 	if (argc < 3)
 		return (1);
 
-	x = atoi(argv[1]);
-	y = atoi(argv[2]);
-
-	if (x <= 0 || y <= 0)
+	if (x < 0 || y < 0)
 	{
-		printf("Error, Enter a positive integer");
+		printf("Error");
 		return (1);
 	}
 
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
+	{
+		x = atoi(argv[i]);
 		sum += x;
+	}
 
 	printf("%d\n", sum);
 	return (0);
