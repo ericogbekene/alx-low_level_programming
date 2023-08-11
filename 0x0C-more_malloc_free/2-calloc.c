@@ -1,8 +1,15 @@
 #include "main.h"
 
+/**
+ * _calloc - allocates memory for array of size
+ * @nmemb: n elements int the array
+ * @size: in bytes
+ *
+ * Return: pointer to array
+ */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
 	char *array;
 
 	if (nmemb == 0 || size == 0)
@@ -11,10 +18,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (array == NULL)
 		return (NULL);
 
-	for (i = 0; i < nmemb; i++)
-	{
-		array[i] = 0;
-	}
+	if (array)
+		memset(array, 0, nmemb * size);
 
 	return (array);
 }
