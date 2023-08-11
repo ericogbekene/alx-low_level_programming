@@ -11,14 +11,23 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
+	unsigned int i = 0;
 	char *ptr;
 	size_t len1, len2,total_len;
 
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 
-	if(n >= s2)
+	if(n >= len2)
 		n = len2;
+
+	if(n < len2)
+	{
+		while (s2[i] < n && s2[i]!= '\0'; i++)
+		{
+			strcpy(ptr, s1);
+		}
+	}
 
 	total_len = (len1 + n + 1);
 
@@ -28,4 +37,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 
 
+	strcpy(ptr, s1);
+
+	return (ptr);
 }
