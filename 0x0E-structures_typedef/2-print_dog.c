@@ -2,12 +2,17 @@
 
 void print_dog(struct dog *d)
 {
+	if (d == NULL)
+	{
+		printf("Struct d does not exist\n");
+		return;
+	}
+
 	if (d->name == NULL)
 		d->name = "(nil)";
-	/*
-	if (!d->age)
-		d->age = "(nil)";
-	*/
+
+	if (d->age == 0.00)
+		printf("(nil)");
 	if (d->owner == NULL)
 		d->owner = "(nil)";
 
