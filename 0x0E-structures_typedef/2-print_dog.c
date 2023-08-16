@@ -10,22 +10,22 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 	{
-		printf("Struct d does not exist\n");
+		free(d);
 		return;
 	}
 
 	if (d->name == NULL)
-		printf("(nil)\n");
+		printf("Name: (nil)\n");
 	else
 		printf("Name: %s\n", d->name);
 
 	if (d->age == 0.00)
-		printf("(nil)");
+		printf("Age: 0.000000");
 	else
 		printf("Age: %f\n", d->age);
 
 	if (d->owner == NULL)
-		printf("(nil)");
+		printf("Owner: (nil)");
 	else
 		printf("Owner: %s\n", d->owner);
 
