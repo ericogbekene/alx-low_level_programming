@@ -26,7 +26,8 @@ int main(int argc, char **argv)
 
 	ptr = get_op_func(op);
 
-	if (ptr == NULL)
+
+	if (ptr == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
