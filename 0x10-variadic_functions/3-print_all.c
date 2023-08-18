@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 			printf("%s", va_arg(list, char*));
 			break;
 		default:
-			putchar(format[i]);
+			continue;
 		}
 		putchar(',');
 	}
