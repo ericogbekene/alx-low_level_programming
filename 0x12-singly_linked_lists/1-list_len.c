@@ -17,6 +17,13 @@ size_t list_len(const list_t *h)
 	{
 		count++;
 		headptr = headptr->next;
+
+		if (headptr->str == NULL)
+		{
+			count++;
+			return (1);
+			headptr = headptr->next;
+		}
 	}
 	return (count);
 }
