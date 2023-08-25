@@ -17,7 +17,7 @@ size_t list_len(const list_t *h)
 	if (headptr == NULL)
 	{
 		printf("Error\n");
-		return (0);
+		return (1);
 	}
 
 	while (headptr != NULL)
