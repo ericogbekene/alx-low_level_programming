@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_binary - prints the binary of a number
+ * @n: input number
+ *
+ * Return: void
+ */
+
 void print_binary(unsigned long int n)
 {
 	unsigned int j = 0, len = 0, bit = 0;
