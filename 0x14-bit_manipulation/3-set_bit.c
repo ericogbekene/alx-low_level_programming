@@ -2,20 +2,23 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int i;
+	/* unsigned int i;*/
 	/* unsigned long int *result = 0; */
-	unsigned long int *mask;
+	unsigned long int mask;
 
-	mask = 1 << index;
+	/* mask = malloc(sizeof(unsigned long int) * 8); */
+
+	/* check for successful malloc */
+
+	mask = 1UL << index;
 
 
-	if (index >= sizeof(unsigned long int) * 8)
-		return (-1);
+	/* if (index >= sizeof(unsigned long int) * 8)
+		return (-1); */
 
-	for (i = 0; n[i] != '\0'; i++)
-	{
-		n[i] = n[i] | mask[i];
-	}
+
+		*n = *n | mask;
+
 	return (1);
 
 	/* result = n || mask; */
