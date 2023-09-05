@@ -11,7 +11,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t content, output;
-	size_t filedesc;
+	int filedesc;
 	char *container;
 
 	container = malloc(sizeof(char) * letters);
@@ -24,20 +24,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	filedesc = open(filename, O_RDONLY);
 
-	/*if (filedesc == -1)
+	if (filedesc == -1)
 	{
-		 print error message
 		return (0);
-	}*/
+	}
 
 
 	content = read(filedesc, container, letters);
 
-	/*if (content == -1)
+	if (content == -1)
 	{
-		 print Error Message
-		return (1);
-	}*/
+		return (0);
+	}
+
+	if (container == NULL)
+		free(container);
 
 	output = write(1, container, content);
 
