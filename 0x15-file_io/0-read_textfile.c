@@ -10,38 +10,43 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t content, output;
-	int filedesc;
+	ssize_t filedesc, content, output;
 	char *container;
+
+	if (filename == NULL)
+		return (0);
 
 	container = malloc(sizeof(char) * letters);
 
 	if (container == NULL)
 		return (0);
 
-	if (filename == NULL)
-		return (0);
-
 	filedesc = open(filename, O_RDONLY);
 
 	if (filedesc == -1)
 	{
+		free(container);
 		return (0);
 	}
-
 
 	content = read(filedesc, container, letters);
 
 	if (content == -1)
 	{
+		free(container);
 		return (0);
 	}
 
-	if (container == NULL)
+
+	output = write(STDOUT_FILENO, container, content);
+
+	if (output == -1 || output != content)
+	{
 		free(container);
+		return (-1);
+	}
 
-	output = write(1, container, content);
-
+	free(container);
 	close(filedesc); /* close file */
 
 	return (output);
