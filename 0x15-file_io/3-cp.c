@@ -43,15 +43,19 @@ void copyfile_function(char *sourcefile, char *newfile)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourcefile);
 		exit(98);
 	}
-	close(file_from); /* replacce this with a call to function to check if close was succesful */
-	if (close(file_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error closing sourcefile %s\n", sourcefile);
-	}
-	close(file_to);
+	closefile(file_from);
+	closefile(file_to);
 }
 
 /* Usage */
+
+/**
+ * main- Usage of copy file
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: (0) on success
+ */
 
 int main(int argc, char **argv)
 {
