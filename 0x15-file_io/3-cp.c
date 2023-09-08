@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * closefile - closes a file descriptor
+ * @fd: file descriptor to close
+ *
+ * Return: void
+ */
+
+void closefile(int fd)
+{
+	int closed;
+
+	closed = close(fd);
+	if (closed == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close file%d\n", fd);
+		exit(98);
+	}
+}
+
+
+#include "main.h"
+
+/**
  * copyfile_function - copies text from one file to another
  * @sourcefile: source file
  * @newfile: where text is copied into
