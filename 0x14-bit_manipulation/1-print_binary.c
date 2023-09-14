@@ -25,6 +25,7 @@ void print_binary(unsigned long int n)
 	{
 		if ((n >> offset) & 1)
 			printf("1");
-		printf("0");
+		else
+			printf("0");
 	}
 }
