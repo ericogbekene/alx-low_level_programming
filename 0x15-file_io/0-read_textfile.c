@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * read_textfile - reads the content of a file, and writes it to stdout
+ * @filename: file to read from
+ * @letters: number of characters to read from file
+ *
+ * Return: number of characters read successfully
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int readFile = 0;
@@ -26,10 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	readBytes = read(readFile, container, letters);
 	if (readBytes == -1)
 		return (0);
-	{
-		return (write(STDOUT_FILENO, container, readBytes));
-	}
-	close(readFile);
-	return (0);
+	return (write(STDOUT_FILENO, container, readBytes));
 
+	close(readFile);
 }
